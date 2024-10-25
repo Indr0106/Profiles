@@ -1,0 +1,16 @@
+*{
+    list-style: none;
+    box-sizing: border-box;
+    margin: 0;
+    pad: 0;
+}
+.main{
+    /* background-color: aqua; */
+    min-width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+.container-sec{
+    overflow: auto;
+    max-height: 100vh;
+}

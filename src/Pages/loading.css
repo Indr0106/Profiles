@@ -1,0 +1,95 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.loading{
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    background-color: black;
+    z-index: 102;
+
+}
+
+.cont-load{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 80%;
+    height: 100vh;
+    left: 50%;
+    transform: translateX(-50%);
+   
+}
+.load-head{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 10px;
+}
+.loader {
+    border: 8px solid rgba(255, 255, 255, 0.3);
+    border-top: 8px solid white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+.load-tag{
+  
+        font-size: 24px;
+        overflow: hidden;
+        background: linear-gradient(90deg, #000, #fff, #000);
+        background-repeat: no-repeat;
+        background-size: 80%;
+        animation: animate 3s linear infinite;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: rgba(255, 255, 255, 0);
+   
+}
+.load-item{
+    width: 100%;
+    min-height: max-content;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-top: 30px;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+.items{
+    background:red;
+    animation: colorChange 5s infinite;
+    padding: 0px 10px;
+    border-radius: 3px;
+}
+@keyframes colorChange {
+    0% { background-color: red;}
+    25% { background-color: blue;}
+    50% { background-color: green; }
+    75% { background-color: yellow; }
+    100% { background-color: purple; }
+}
+@keyframes animate {
+    0% {
+      background-position: -500%;
+    }
+    100% {
+      background-position: 500%;
+    }
+  }
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

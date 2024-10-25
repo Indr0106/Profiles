@@ -1,0 +1,335 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.learn{
+    width: 100%;
+    height: 100vh;
+    /* background-color: purple; */
+    z-index: 5;
+    overflow: hidden;
+}
+.learn-head{
+    text-align: center;
+    padding-top: 5em;
+    z-index: 10;
+    position: relative;
+    font-family: "Dancing Script",cursive;
+    color: white;
+}
+.card-cont{
+    min-width: 100%;
+    /* min-height: max-content; */
+   
+    height: max-content !important;
+    background-color: black;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  
+   
+}
+
+.card-title{
+    text-align: center;
+}
+.card{
+    width: 25%;
+    max-width: 25%;
+    /* min-height: 345px; */ 
+}
+.cont-flip-card{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: bisque; */
+}
+.flip-card{
+  width: 30%;
+  height: 380px;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  
+
+}
+.flip-inner{
+  width: 80%;
+  height: 100%;
+  backface-visibility: visible;
+  /* background-color: aqua; */
+  position: relative;
+  
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
+}
+.flip-inner.is-flipped{
+  transform: translateX(-100%) rotateY(-180deg);
+}
+.card-face{
+  
+  width: 100%;
+  height: 100%;
+  /* background-color: blue; */
+  position: absolute;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border: 2px solid black;
+  border-radius: 15px;
+}
+.card-face.front{
+  background: rgba(255, 255, 255, 0.3); /* Warna latar belakang dengan transparansi */
+            backdrop-filter: blur(10px); /* Efek blur di belakang */
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+.card-face.back{
+  /* background-color:linear-gradient(to right, #D2B48C, #8B4513); */
+  transform: rotateY(180deg);
+}
+.cardC{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+.info-cont{
+  padding: 10px;
+}
+.img-learn{
+  width: 50%;
+}
+.cont-ball{
+  display: none;
+}
+
+
+
+@media (max-width: 600px) {
+    .card{
+        
+            width: 70%;
+            max-width: 80%;
+       
+            /* position: absolute;
+            left: -50%; */
+        
+        /* animation: onTop 12s 2s ease infinite; */
+    }  
+    .card-cont{
+        flex-direction: column;
+        display: flex;
+        margin-top: 30px;
+        min-height: 100px !important;
+        position: relative;
+        justify-content: center;
+       
+      
+    }
+    .cont-flip-card{
+      flex-direction: column;
+
+    }
+    .flip-card{
+      width: 80%;
+    }
+    .flip-card.card0{
+      position: relative;
+      /* top: -100px; */
+      z-index: 4;
+      animation: slideup 2s ease forwards;
+    }
+    @keyframes slideup {
+      0%{
+        transform: translateY(0%);
+      }50%{
+        transform: translateY(-70%);
+        z-index: 4;
+      }70%{
+        transform: translateY(30%);
+        z-index: 1;
+      }100%{
+        transform: translateY(170px);
+        z-index: 1;
+      }
+    }
+    .flip-card.card1{
+      position: relative;
+      top: -250px;
+      z-index: 3;
+      animation: middleCard 3s ease forwards;
+    }
+    @keyframes middleCard {
+      0%{
+        transform: translateY(0%);
+      }100%{
+        transform: translateY(-5%);
+        z-index: 4;
+      }
+    }
+    .flip-card.card2{
+      position: relative;
+      top: -600px;
+      z-index: 2;
+      animation: bottomCard 3s ease forwards;
+    }
+    @keyframes bottomCard {
+      0%{
+        transform: translateY(0%);
+      }100%{
+        transform: translateY(-5%);
+      }
+    }
+    .card.c0.card{
+        position: absolute;
+        top: 0%;
+        z-index: 2;
+        animation: slideUp 2s  ease forwards;
+        /* display: none; */
+    }
+    .card.c1.card{
+        position: absolute;
+        top: 20%;
+        z-index:1;
+        animation: onMiddle 2s ease forwards;
+    }
+    .card.c2.card{
+        position: absolute;
+        top: 30%;
+        animation: onBottom 2s ease forwards;
+        z-index:0;
+    }
+    .cont-ball{
+      display: block;
+        width: 80%;
+        height: 50px;
+        background-color: transparent;
+        position: absolute;
+        left: 50%;
+        bottom: 100px;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+
+    }
+
+
+.ball-learn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: gray;
+    margin-left: 5px;
+    transition: background-color 1s;
+ 
+  
+}
+    
+
+.ball-learn.active {
+    background-color: rgb(248, 248, 248); 
+    box-shadow: 3px 3px 10px white;
+}
+    @keyframes slideUp {
+        10% {
+           
+            transform: translateY(0%); /* Mulai dari bawah */
+            z-index: 2;
+        }
+        50% {
+          
+            transform: translateY(-110%); /* Akhir di posisi normal */
+           
+            
+        }100%{
+            z-index: 0;
+            transform: translateY(0%);
+            top:40%;
+        }
+    }
+      @keyframes onMiddle {
+        10% {
+
+          /* transform: translateY(0); */
+          z-index: 1;
+          top: 20%;
+          
+        }
+        
+        100% {
+          /* transform: translateY(0); */
+          z-index: 2;
+          top: 0%;
+        
+        }
+        
+      
+      }
+      @keyframes onBottom {
+        10% {
+
+          /* transform: translateY(0); */
+          z-index: 0;
+          top: 30%;
+          
+        }
+        
+        100% {
+          /* transform: translateY(0); */
+          z-index: 0;
+          top: 20%;
+        
+        }
+        
+      
+      }
+      /* @keyframes onBottom {
+        10% {
+          transform: translateY(0);
+          z-index: 0;
+          left: 20px;
+          top: 20px;
+        }
+        40% {
+          transform: translateY(0);
+          z-index: 1;
+          left: 20px;
+          top: 20px;
+        }
+        50% {
+          transform: translateY(0);
+          z-index: 2;
+          left: 0;
+          top: 0;
+        }
+        70% {
+          transform: translateY(0);
+          z-index: 2;
+          left: 0;
+          top: 0;
+        }
+        75% {
+          transform: translateY(-300px);
+          z-index: 1;
+          left: 20px;
+          top: 20px;
+        }
+        80% {
+          transform: translateY(0);
+          z-index: 0;
+          left: 40px;
+          top: 40px;
+        }
+    } */
+
+  
+}
+

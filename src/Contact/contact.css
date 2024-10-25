@@ -1,0 +1,82 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.contact{
+    min-width: 100%;
+    min-height: 100vh;
+    /* background-color: bisque; */
+    color: white;
+  
+}
+.cont-head{
+    text-align: center;
+    padding-top: 5em;
+    font-family: "Dancing Script",cursive;
+}
+.cont-info{
+    padding: 10px 50px;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+}
+small.text-muted.form-text {
+    color: white !important;
+}
+input#formBasicEmail {
+
+    
+    transition: 2s box-shadow forwards;
+}
+input#formBasicEmail:focus {
+   
+    box-shadow: 5px 5px 10px green;
+   
+}
+textarea#formBasicPassword {
+   
+ 
+    transition: 2s box-shadow forwards;
+}
+textarea#formBasicPassword:focus {
+    box-shadow: 5px 5px 10px green;
+
+}
+.cont-con{
+    width: 50%;
+    height: auto;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
+    border: 5px solid black;
+    border-radius: 15px;
+    position: relative;
+    background-color: bisque;
+}
+.contacts{
+    width: 35%;
+    height: 100px;
+    
+}
+
+@media (max-width: 660px) {
+    .cont-con{
+        margin-top: 20px;
+        width: 100%;
+        flex-direction: row;
+        padding: 2px 2px;
+
+    }
+    .contacts{
+        width: 15%;
+        height: auto;
+        
+    }
+
+}

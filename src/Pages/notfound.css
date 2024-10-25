@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Kablammo&display=swap');
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
+}
+
+.not-cont{
+    width: 100%;
+    min-height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 30px;
+    
+}
+.head-not{
+    width: 80%;
+    height: max-content;
+    position: relative;
+    display: flex;
+    justify-content: center;
+   
+}
+.tag{
+    font-size: 200px !important;
+    color: red;
+    font-family: "Kablammo", system-ui;
+ 
+  
+}
+.tag2{
+    color: white;
+}
+.sub-tag{
+    background-color: red;
+    padding: 10px;
+    border-radius: 15px ;
+    border:3px solid white;
+    height: max-content;
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+@media (max-width: 600px) {
+    .head-not{
+     flex-direction: column;
+     flex-wrap: nowrap;
+    align-items: center;
+    }
+}
